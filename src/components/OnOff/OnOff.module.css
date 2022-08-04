@@ -1,0 +1,41 @@
+
+
+
+
+.everyButton {
+    display: grid;
+    grid-template-columns: 4rem 4rem 4rem;
+    width: 120px;
+
+    padding: 20px;
+    column-gap:  15px
+
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.radiusRed {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.radiusGreen {
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+
+
+.white {
+    background-color: white;
+}
