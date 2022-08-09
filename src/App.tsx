@@ -1,25 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
-// import {Rating} from "./components/Raiting/Rating";
-import {OnOff} from './components/UseStateOnOff/UseStateOnOff';
-import UnControlledAccordion from './components/UnControlledAccordion/UnControlledAccordion';
 import {UnControlledRating} from './components/UnControlledRaiting/UnControlledRating';
-import {Rating} from './components/Raiting/Rating';
-// import {OnOff} from './components/OnOff/OnOff';
+import {Rating, RatingValueType} from './components/Raiting/Rating';
+import {UncUseStateOnOff} from './components/UncUseStateOnOff/UncUseStateOnOff';
+import UnControlledAccordion from './components/UnControlledAccordion/UnControlledAccordion';
+
+
+
+
 
 function App () {
     console.log("App rendering")
+
+    let [ratingValue, setRatingValue] = useState <RatingValueType>(0)
+    let [accordionCollapsed, setAccordionCollapsed] = useState <boolean>(true)
+    let [switchOn, setSwitchOn] = useState<boolean> (false)
+
     return (
         <div className={"App"}>
-            <OnOff />
+            {/*<OnOff />*/}
+            {/*<UseStateOnOff on={switchOn} onChange={setSwitchOn}/>*/}
 
-            <UnControlledAccordion titleValue={"Menu"} />
-            <Accordion titleValue={"Menu"} collapsed={true}/>
+            <UncUseStateOnOff onChange={setSwitchOn}/> {switchOn.toString()}
 
-            <UnControlledRating />
-            <Rating value = {3} />
 
+            <UnControlledAccordion titleValue={"Bla Bla"} />
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <UnControlledRating/>
+
+            <Accordion titleValue={"Menu"} collapsed={accordionCollapsed} onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
+
+
+            {/*<Rating value = {3} />*/}
             {/*<OnOff on={true}/>*/}
             {/*<OnOff on={false}/>*/}
             {/*<PageTitle title={"This is APP component"}/>*/}
@@ -39,20 +52,19 @@ function App () {
     );
 }
 
-
-type PageTitlePropsType = {
-    title: string
-}
-function PageTitle (props: PageTitlePropsType) {
-
-    console.log("PageTitle rendering")
-    return <h1>{props.title}</h1>
-}
+//
+// type PageTitlePropsType = {
+//     title: string
+// }
+//
+// function PageTitle (props: PageTitlePropsType) {
+//
+//     console.log("PageTitle rendering")
+//     return <h1>{props.title}</h1>
+// }
 
 // function hallo () {
 //     alert ("Hallo IT-KAMASUTRA")
 // }
-
-
 
 export default App;
