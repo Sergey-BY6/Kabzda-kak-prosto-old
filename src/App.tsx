@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
-import {UnControlledRating} from './components/UnControlledRaiting/UnControlledRating';
+import {Accordion} from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from './components/Raiting/Rating';
 import {UncUseStateOnOff} from './components/UncUseStateOnOff/UncUseStateOnOff';
-import UnControlledAccordion from './components/UnControlledAccordion/UnControlledAccordion';
+import {UnControlledAccordion} from './components/UnControlledAccordion/UnControlledAccordion';
 
 
 
@@ -27,9 +26,16 @@ function App () {
 
             <UnControlledAccordion titleValue={"Bla Bla"} />
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <UnControlledRating/>
+            {/*<UnControlledRating/>*/}
 
             <Accordion titleValue={"Menu"} collapsed={accordionCollapsed} onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
+
+
+
+
+
+
+
 
 
             {/*<Rating value = {3} />*/}

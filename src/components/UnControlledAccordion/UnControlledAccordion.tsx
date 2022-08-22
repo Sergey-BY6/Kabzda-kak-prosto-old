@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 
-type AccordionPropsType = {
+export type AccordionPropsType = {
     titleValue: string
-    // collapsed?: boolean
 }
 
-function UnControlledAccordion (props: AccordionPropsType ) {
+export function UnControlledAccordion (props: AccordionPropsType ) {
 
 let [collapsed, setCollapsed] = useState (false)
 
@@ -17,18 +16,18 @@ let [collapsed, setCollapsed] = useState (false)
         )
 }
 
-type AccordionTitlePropsType = {
+export type AccordionTitlePropsType = {
     title: string
     onClick: () => void
 }
 
-function AccordionTitle (props: AccordionTitlePropsType) {
+export function AccordionTitle (props: AccordionTitlePropsType) {
     return (
             <h3 onClick={ () => props.onClick()}>-- {props.title} -- </h3>
     )
 }
 
-function AccordionBody () {
+export function AccordionBody () {
     return (
             <ul>
                 <li>1</li>
@@ -38,4 +37,4 @@ function AccordionBody () {
     )
 }
 
-export default UnControlledAccordion
+// export default UnControlledAccordion

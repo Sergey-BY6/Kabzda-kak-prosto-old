@@ -2,9 +2,8 @@ import React from 'react';
 import s from './OnOff.module.css'
 
 
-type OnOffPropsType = {
+export type OnOffPropsType = {
     value: boolean
-
 }
 
 export const OnOff: React.FC<OnOffPropsType> = (props) => {
@@ -15,11 +14,11 @@ export const OnOff: React.FC<OnOffPropsType> = (props) => {
     )
 }
 
-type ButtonPropsType = {
+export type ButtonPropsType = {
     selected: boolean
 }
 
-const Button: React.FC<ButtonPropsType> = (props) => {
+export const Button: React.FC<ButtonPropsType> = (props) => {
 
         return (
             <div className={s.everyButton}>
